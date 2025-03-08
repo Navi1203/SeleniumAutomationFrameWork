@@ -1,13 +1,15 @@
 Feature: Automating the Amazon feature
-   
-  @tag1
-  Scenario: Title of your scenario
+
+  Background:
     Given Launch the Web page
-    And click on login button
-    Then Enter user name and password
-    And click on submit button
-    And verfiy the login is successful
 
-Example: 
-| name  | value | status  |
 
+  
+  Scenario Outline: Verify Succesfull login
+    Then Enter username "<username>" and password "<password>"
+    And Click on submit button
+    Then Verify the login is successful by checking "<title>"
+
+Examples: 
+| username  								| password 			| title  				|
+| xxxxxxxxxxxxxxx@gmail.com	| yyyyyyyxxxxx	| Hello, Naveen |
